@@ -57,7 +57,6 @@ function gradeQuiz(candidateAnswers) {
     console.log(`Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
     if (lowered(candidateAnswers[i]) === lowered(correctAnswers[i])) {
       gradedAnswers.push(candidateAnswers[i]);
-      console.log(gradedAnswers);
     }
   }
 
