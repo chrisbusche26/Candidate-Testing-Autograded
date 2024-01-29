@@ -41,16 +41,29 @@ function askQuestion() {
   }
 }
 
+let lowered = function (answer) {
+  if (typeof answer === 'string') {
+    return answer.toLowerCase();
+  } else {
+      return answer;
+  }
+};
+  
 function gradeQuiz(candidateAnswers) {
+  let gradedAnswers = [];
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i = 0; i < candidateAnswers.length; i++) {
-    console.log(`Your answer: ${candidateAnswers[i]}. Correct answer ${correctAnswers[i]}.`);
+    console.log(`Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+    if (lowered(candidateAnswers[i]) === lowered(correctAnswers[i])) {
+      gradedAnswers.push(candidateAnswers[i]);
+      console.log(gradedAnswers);
+    }
   }
 
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
+  let grade = (gradedAnswers.length) / (questions.length) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
+  console.log(grade);
 
   return grade;
 }
