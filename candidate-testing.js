@@ -54,7 +54,8 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i = 0; i < candidateAnswers.length; i++) {
-    console.log(`Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+    console.log(questions[i])
+    console.log(`Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}. \n`);
     if (lowered(candidateAnswers[i]) === lowered(correctAnswers[i])) {
       gradedAnswers.push(candidateAnswers[i]);
     }
@@ -74,7 +75,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(candidateAnswers);
 }
-//push
+
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
